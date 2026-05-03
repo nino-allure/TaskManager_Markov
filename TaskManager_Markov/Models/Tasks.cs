@@ -17,7 +17,7 @@ namespace TaskManager_Markov.Models
             {
                 Match match = Regex.Match(value, "^.{1,50}$");
                 if (!match.Success)
-                    MessageBox.Show("Накосячил на вводе - ЛОХ! (а еще не более 50 символов)");
+                    MessageBox.Show("Накосячил на вводе - ЛОХ! (а еще не более 50 символов)" , "Ошибка");
                 else
                 {
                     name = value;
@@ -33,7 +33,7 @@ namespace TaskManager_Markov.Models
             {
                 Match match = Regex.Match(value, "^.{1,30}$");
                 if (!match.Success)
-                    MessageBox.Show("Накосячил на вводе - ЛОХ! (а еще не более 30 символов)");
+                    MessageBox.Show("Накосячил на вводе - ЛОХ! (а еще не более 30 символов)", "Ошибка");
                 else
                 {
                     priority = value;
@@ -49,7 +49,7 @@ namespace TaskManager_Markov.Models
             set
             {
                 if (value.Date < DateTime.Now.Date)
-                    MessageBox.Show("А те норм что дата меньше текущей?");
+                    MessageBox.Show("А те норм что дата меньше текущей?", "Ошибка");
                 else
                 {
                     dateExecute = value;
@@ -66,7 +66,7 @@ namespace TaskManager_Markov.Models
             {
                 Match match = Regex.Match(value, "^.{1,1000}$");
                 if (!match.Success)
-                    MessageBox.Show("Накосячил на вводе - ЛОХ! (1000 символов строчи)");
+                    MessageBox.Show("Накосячил на вводе - ЛОХ! (1000 символов строчи)", "Ошибка");
                 else
                 {
                     comment = value;
@@ -76,7 +76,7 @@ namespace TaskManager_Markov.Models
         }
 
         public bool done;
-        public string Done
+        public bool Done
         {
             get { return done; }
             set
@@ -157,6 +157,7 @@ namespace TaskManager_Markov.Models
                 {
                     Done = !Done;
                 });
+            }
         }
     }
 }
