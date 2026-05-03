@@ -20,7 +20,7 @@ namespace TaskManager_Markov.View
     /// </summary>
     public partial class Main : Page
     {
-        public Main()
+        public Main(object Context)
         {
             InitializeComponent();
             DataContext = Context;

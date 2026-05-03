@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaskManager_Markov.Classes.Database;
+using TaskManager_Markov.Models;
 
 namespace TaskManager_Markov.Context
 {
@@ -14,7 +15,7 @@ namespace TaskManager_Markov.Context
         public TasksContext()
         {
             Database.EnsureCreated();
-            TasksContext.Load();
+            Tasks.Load();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

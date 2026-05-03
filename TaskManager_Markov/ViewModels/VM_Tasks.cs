@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TaskManager_Markov.Classes;
 using TaskManager_Markov.Context;
+using TaskManager_Markov.Models;
 
 namespace TaskManager_Markov.ViewModels
 {
@@ -22,7 +23,12 @@ namespace TaskManager_Markov.ViewModels
                 {
                     Tasks NewTask = new Tasks()
                     {
-                        DateExecute = DateTime.Now
+                        Name = "Новый прикол",
+                        Priority = "Средне",
+                        DateExecute = DateTime.Now,
+                        Comment = "Накалаякай",
+                        Done = false,
+                        IsEnable = true
                     };
                     Tasks.Add(NewTask);
                     tasksContext.Tasks.Add(NewTask);
